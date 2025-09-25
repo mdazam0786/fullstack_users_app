@@ -1,30 +1,53 @@
-# Fullstack Users App
+Fullstack Users App
 
-This project contains:
-- backend: Node.js + Express + MySQL
-- frontend: Vue 3 + Vuetify
+Description:
+This is a full-stack user management application with backend and frontend.
 
-## Quick start
+Backend: Node.js + Express + MySQL
+Frontend: Vue 3 + Vuetify
 
-1. MySQL:
-   - Create database: `CREATE DATABASE users_db;`
-   - Update backend/.env with your DB credentials.
+Quick Start
+1. MySQL
 
-2. Backend:
-   ```
-   cd backend
-   cp .env.example .env
-   npm install
-   # seed 1000 users (optional)
-   npm run seed
-   npm run dev
-   ```
+Create a database:
 
-3. Frontend:
-   ```
-   cd frontend
-   npm install
-   npm run dev
-   ```
+CREATE DATABASE users_db;
 
-Open the frontend dev server (Vite prints the URL, typically http://localhost:5173).
+
+Update backend/.env with your database credentials:
+
+DB_HOST=localhost
+DB_USER=root
+DB_PASSWORD=yourpassword
+DB_NAME=users_db
+PORT=5001
+
+2. Backend Setup
+cd backend
+cp .env.example .env        # create your env file
+npm install                 # install dependencies
+npm run seed                # seed 1000 users (optional)
+npm run dev                 # start backend server
+
+
+Default backend URL: http://localhost:5001
+
+3. Frontend Setup
+cd frontend
+npm install                 # install dependencies
+npm run dev                 # start frontend
+
+
+Default frontend URL: Usually http://localhost:5173 (if using Vite)
+
+4. Notes
+
+Backend API routes:
+
+GET /api/users → List users
+
+POST /api/users/fetch → Fetch & insert users
+
+PUT /api/users/:uuid → Update user
+
+Frontend displays users in a paginated table with search and edit functionality.
